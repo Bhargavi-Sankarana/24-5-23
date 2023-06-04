@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+  var firstName = document.getElementById("firstName").value;
+  var mobile = document.getElementById("mobile").value;
+  var password=document.getElementById("password").value;
+  var username=document.getElementById("username").value;
+  var firstNameCheck = /^[a-zA-Z]+$/;
+  var mobileCheck = /^[0-9]{10}$/;
+  var passwordCheck=/^[A-Za-z0-9.#@]{8,16}$/;
+  var usernameCheck=/^[A-Za-z.#-]+[A-Za-z]{20,30}$/;
+  var email=document.getElementById("email").value;
+ var emailCheck=/^[a-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/;
+
+  if (firstName == "" || firstName.length < 3) {
+    alert("Please enter your first name");
+    return false;
+  }
+
+  if (!firstName.match(firstNameCheck)) {
+    alert("Name must carry alphabets");
+    return false;
+  }
+if (!mobile.match(mobileCheck)) {
+    alert("Please check your mobile number");
+    return false;
+  }
+  if(!email.match(emailCheck)){
+                alert("please check your email")
+                return false
+            }
+            if(!password.match(passwordCheck)){
+                alert("check password");
+                return false;
+            }
+            if(!username.match(usernameCheck)){
+              alert("check username");
+              return false;
+            }
+  return true;
+}
+    </script>
+</head>
+<body>
+    <form onsubmit="return validate()" >
+        <p><input type="text" placeholder="Enter firstname" id="firstName"/></p>
+        <p><input placeholder="enter mobile number" id="mobile"/></p>
+        <p><input type="text" placeholder="enter email" id="email"/></p>
+        <p><input type="text" placeholder="enter password" id="password"></p>
+        <p><input type="text" placeholder="enter username" id="username"></p>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

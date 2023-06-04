@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*var s="abcdefghijklmnopqrstuvwxyz"
+        console.log(Math.random())
+        console.log(Math.floor(77.65))
+        console.log(s.charAt(25))*/
+        var password=[], passwordList="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%^&&*(){};'"
+        for(var u=1;u<=8;u++)
+        {
+            var randomNumber=Math.floor(Math.random()*passwordList.length)
+            //console.log(randomNumber,passwordList,charAt(randomNumber))
+            password.push(passwordList.charAt(randomNumber))
+        }
+        //console.log(password)
+        var finalResult=password.join("")
+        console.log(finalResult)
+    </script>
+</body>
+</html>
